@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 11:40:10 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 17:38:56 2016 marlon petit
+** Last update Tue Jan 12 17:38:35 2016 marlon petit
 */
 
 #ifndef __FEDERATION_HH__
@@ -43,7 +43,8 @@ namespace		Federation
     class         Ship 
     {
     public:
-      Ship(int length, int width, std::string name, short maxWarp);
+      Ship(int length, int width, std::string name, short maxWarp, int torpedo);
+      Ship();
       void	setupCore(WarpSystem::Core *);
       void	checkCore();
       void	promote(Federation::Starfleet::Captain *);
@@ -51,8 +52,16 @@ namespace		Federation
       bool	move(int);
       bool	move(Destination);
       bool	move();
+      int getShield();
+      void setShield(int);
+      int getTorpedo();
+      void setTorpedo(int);
+      void fire(Borg::Ship *);
+      void fire(int torpedoes, Borg::Ship *);
       int         _length;                               
       int         _width;
+      int _shield;
+      int _photonTorpedo;
       std::string    _name;
       short         _maxWarp;
       Destination	_location;
@@ -68,6 +77,7 @@ namespace		Federation
     Ship(int length, int width, std::string name);                                       
     void      setupCore(WarpSystem::Core *);
     void      checkCore();
+    WarpSystem::Core	*getCore();
     bool                move(int warp, Destination d);
     bool      move(int);
     bool      move(Destination);
