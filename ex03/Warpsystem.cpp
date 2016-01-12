@@ -5,10 +5,16 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 13:06:32 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 13:53:34 2016 marlon petit
+** Last update Tue Jan 12 18:15:28 2016 marlon petit
 */
 
+#include <iostream>
+#include <string>
+
+#include "Federation.hh"
 #include "Warpsystem.hh"
+#include "Borg.hh"
+#include "Destination.hh"
 
 WarpSystem::QuantumReactor::QuantumReactor()
 {

@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 11:40:10 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 17:38:35 2016 marlon petit
+** Last update Tue Jan 12 19:12:00 2016 marlon petit
 */
 
 #ifndef __FEDERATION_HH__
@@ -14,9 +14,9 @@
 #include <iostream>
 #include <string>
 
+#include "Destination.hh"
 #include "Warpsystem.hh"
 #include "Borg.hh"
-#include "Destination.hh"
 
 namespace		Federation
 {
@@ -31,7 +31,7 @@ namespace		Federation
       std::string       getName();
       int               getAge();
       void              setAge(int);
-      std::string       _name;
+      std::string      _name;
       int               _age;
     };
     class               Ensign

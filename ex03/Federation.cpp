@@ -5,12 +5,16 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 11:57:34 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 17:40:32 2016 marlon petit
+** Last update Tue Jan 12 19:11:51 2016 marlon petit
 */
+
+#include <iostream>
+#include <string>
 
 #include "Federation.hh"
 #include "Warpsystem.hh"
 #include "Destination.hh"
+#include "Borg.hh"
 
 Federation::Starfleet::Ship::Ship(int length, int width, std::string name, short maxWarp, int torpedo)
 {
@@ -27,8 +31,8 @@ Federation::Starfleet::Ship::Ship(int length, int width, std::string name, short
 
 Federation::Starfleet::Ship::Ship()
 {
-  this->length = 289;
-  this->width = 132;
+  this->_length = 289;
+  this->_width = 132;
   this->_name = "Entreprise";
   this->_maxWarp = 6;
   this->_home = EARTH;
@@ -224,7 +228,7 @@ void	Federation::Starfleet::Ship::setTorpedo(int torpedo)
   this->_photonTorpedo = torpedo;
 }
 
-WarpSystem::Core	Federation::Ship::*getCore()
+WarpSystem::Core	*Federation::Ship::getCore()
 {
   return (this->_core);
 }
