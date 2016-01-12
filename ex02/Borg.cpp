@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 14:27:11 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 15:45:41 2016 marlon petit
+** Last update Tue Jan 12 15:50:58 2016 marlon petit
 */
 
 #include <iostream>
@@ -42,6 +42,9 @@ void	Borg::Ship::checkCore()
 bool    Borg::Ship::move(int warp, Destination d)
 {
   if (warp <= this->_maxWarp && d != this->_location && this->_core->checkReactor()->isStable() == true)
-    return (true);
+    {
+      this->_location = d;
+      return (true);
+    }
   return (false);
 }
