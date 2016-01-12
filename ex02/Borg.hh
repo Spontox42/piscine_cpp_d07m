@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 14:25:04 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 15:42:11 2016 marlon petit
+** Last update Tue Jan 12 16:53:20 2016 marlon petit
 */
 
 #ifndef BORG_HH_
@@ -26,7 +26,10 @@ namespace		Borg
     Ship();
     void		setupCore(WarpSystem::Core *);
     void		checkCore();
-    bool		move(int warp = 0, Destination d = UNICOMPLEX);
+    bool		move(int warp, Destination d);
+    bool		move(int);
+    bool		move(Destination);
+    bool		move();
     int			_side;
     short		_maxWarp;
     Destination		_home;

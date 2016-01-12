@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 11:57:34 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 15:48:05 2016 marlon petit
+** Last update Tue Jan 12 17:07:18 2016 marlon petit
 */
 
 #include "Federation.hh"
@@ -98,13 +98,79 @@ Federation::Starfleet::Ensign::Ensign(std::string name)
 bool	Federation::Starfleet::Ship::move(int warp, Destination d)
 {
   if (warp <= this->_maxWarp && d != this->_location && this->_core->checkReactor()->isStable() == true)
-    return (true);
+    {
+      this->_location = d;
+      return (true);
+    }
+  return (false);
+}
+
+bool	Federation::Starfleet::Ship::move(int warp)
+{
+  if (warp <= this->_maxWarp && this->_home != this->_location && this->_core->checkReactor()->isStable() == true)
+    {
+      this->_location = this->_home;
+      return (true);
+    }
+  return (false);
+}
+
+bool	Federation::Starfleet::Ship::move(Destination d)
+{
+  if (d != this->_location && this->_core->checkReactor()->isStable() == true)
+    {
+      this->_location = d;
+      return (true);
+    }
+  return (false);
+}
+
+bool	Federation::Starfleet::Ship::move()
+{
+  if (this->_home != this->_location && this->_core->checkReactor()->isStable() == true)
+    {
+      this->_location = this->_home;
+      return (true);
+    }
   return (false);
 }
 
 bool    Federation::Ship::move(int warp, Destination d)
 {
   if (warp <= this->_maxWarp && d != this->_location && this->_core->checkReactor()->isStable() == true)
-    return (true);
+    {
+      this->_location = d;
+      return (true);
+    }
+  return (false);
+}
+
+bool	Federation::Ship::move(int warp)
+{
+  if (warp <= this->_maxWarp && this->_home != this->_location && this->_core->checkReactor()->isStable() == true)
+    {
+      this->_location = this->_home;
+      return (true);
+    }
+  return (false);
+}
+
+bool	Federation::Ship::move(Destination d)
+{
+  if (d != this->_location && this->_core->checkReactor()->isStable() == true)
+    {
+      this->_location = d;
+      return (true);
+    }
+  return (false);
+}
+
+bool	Federation::Ship::move()
+{
+  if (this->_home != this->_location && this->_core->checkReactor()->isStable() == true)
+    {
+      this->_location = this->_home;
+      return (true);
+    }
   return (false);
 }

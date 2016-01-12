@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 11:40:10 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 15:38:54 2016 marlon petit
+** Last update Tue Jan 12 17:07:20 2016 marlon petit
 */
 
 #ifndef __FEDERATION_HH__
@@ -47,7 +47,10 @@ namespace		Federation
       void	setupCore(WarpSystem::Core *);
       void	checkCore();
       void	promote(Federation::Starfleet::Captain *);
-      bool                move(int warp = 0, Destination d = EARTH);
+      bool                move(int warp, Destination d);
+      bool	move(int);
+      bool	move(Destination);
+      bool	move();
       int         _length;                               
       int         _width;
       std::string    _name;
@@ -66,6 +69,9 @@ namespace		Federation
     void      setupCore(WarpSystem::Core *);
     void      checkCore();
     bool                move(int warp = 0, Destination d = VULCAN);
+    bool      move(int);
+    bool      move(Destination);
+    bool      move();
     int         _length;                                                                                
     int         _width;       
     Destination       _location;                                                                        

@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 11:57:34 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 15:48:05 2016 marlon petit
+** Last update Tue Jan 12 16:48:13 2016 marlon petit
 */
 
 #include "Federation.hh"
@@ -20,6 +20,8 @@ Federation::Starfleet::Ship::Ship(int length, int width, std::string name, short
   this->_maxWarp = maxWarp;
   this->_home = EARTH;
   this->_location = EARTH;
+  this->_shield = 100;
+  this->_photonTorpedo = 20;
   std::cout << "The ship USS " << this->_name << " has been finished. It is " << this->_length << " m in length and " << this->_width << " m in width." << std::endl << "It can go to Warp " << this->_maxWarp << '!' << std::endl;
 }
 
@@ -107,4 +109,24 @@ bool    Federation::Ship::move(int warp, Destination d)
   if (warp <= this->_maxWarp && d != this->_location && this->_core->checkReactor()->isStable() == true)
     return (true);
   return (false);
+}
+
+void	Federation::Starfleet::Ship::setShield(int shield)
+{
+  this->_shield = shield;
+}
+
+int	Federation::Starfleet::Ship::getShield()
+{
+  return (this->_shield);
+}
+
+void	Federation::Starfleet::Ship::setTorpedo(int photonTorpedo)
+{
+  this->_photonTorpedo = photonTorpedo;
+}
+
+int	Federation::Starfleet::Ship::getTorpedo()
+{
+  return (this->_photonTorpedo);
 }
