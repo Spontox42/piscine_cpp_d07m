@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Tue Jan 12 11:57:34 2016 petit_x - Marlon Petit
-** Last update Tue Jan 12 13:56:56 2016 marlon petit
+** Last update Tue Jan 12 17:11:24 2016 marlon petit
 */
 
 #include "Federation.hh"
@@ -46,7 +46,7 @@ Federation::Ship::Ship(int length, int width, std::string name)
 void    Federation::Ship::setupCore(WarpSystem::Core *core)                                               
 {                                                                                                        
   this->_core = core;
-  std::cout << "USS " << this->_name << ": The core is set." << std::endl;
+  std::cout << this->_name << ": The core is set." << std::endl;
 }
 
 void    Federation::Ship::checkCore()                                                         
